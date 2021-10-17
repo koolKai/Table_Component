@@ -3,8 +3,8 @@
 const url = "http://dummy.restapiexample.com/api/v1/employees";
 const arr = [];
 
-// test case:2
-//const url = false;
+// // test case:2
+// const url = false;
 // const arr = [
 //   {
 //     id: 1,
@@ -41,11 +41,15 @@ const arr = [];
 //     employee_age: 33,
 //     profile_image: "",
 //   },
-// ]; //to store api data
+// ]; //to store table data
+
+/*create global variables for table Data input*/
 
 const headerItem = ["Id", "Employee_Name", "Employee_Salary", "Employee_Age"]; //to set number of columns
 
 let headCount = headerItem.length;
+
+/*table component Functions*/
 
 function generate_table() {
   tableData(url, arr, headCount, headerItem);
@@ -82,6 +86,7 @@ function tableData(url, arr, headCount, headerItem) {
       }
     });
   } else if (!url && arr) {
+  /* To get print data from an array without fetching Api data*/
     if (!arr.length) {
       alert("error detacted no data to show");
     } else if (arr.length) {
@@ -176,6 +181,7 @@ function tableBody(arr) {
 }
 
 //////////////////////////////////////
+/*Resizer Function for table column*/
 
 function reiser() {
   console.log("insidethe function");
